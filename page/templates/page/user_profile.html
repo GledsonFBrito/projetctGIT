@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>USER PROFILE</title>
+</head>
+<body>
+<h1>User</h1>
+
+<h3>surch profile (type user)</h3>
+<form action="" method="get">
+    <input type="text" name="username">
+    <button type="submit" value="Search">Search</button>
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+
+</div>
+
+<br>
+
+<p>ID - {{data.id}}</p>
+<p>Login - {{data.login}}</p>
+<p>Name - {{data.name}}</p>
+<p><a target="_blank" href="{{data.html_url}}">Github profile</a></p>
+<p><a target="_blank" href="{{data.repos_url}}">Repository</a></p>
+<p>Location - {{data.location}}</p>
+
+
+
+
+
+
+</body>
+</html>
