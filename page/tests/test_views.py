@@ -1,26 +1,37 @@
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djangogitapi.settings")
+
+import django
+
+django.setup()
+
+from django.core.management import call_command
+
+from django.urls import reverse
+
 from django.test import TestCase
 from django.test import Client
 
 
-class TestHome(TestCase):
-    def setUp(self):
-        self.c = Client()
+class TestViews200(TestCase):
 
-    def test_home(self):
-        response = self.c.post('/')
+    def test_status_code_home_200(self):
+        response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
 
-    def test_find_user(self):
-        response = self.c.post('')
+    def test_status_code_find_user_200(self):
+        response = self.client.get(reverse('find_user'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'page/home.html')
 
-    def test_user_profile(self):
-        response = self.c.post('')
+    def test_status_code_user_profile_200(self):
+        response = self.client.get(reverse('user_profile'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'page/home.html')
 
-    def test_user_repository(self):
-        response = self.c.post('')
+    def test_status_code_user_repository_200(self):
+        response = self.client.get(reverse('user_repository'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'page/home.html')
+
+
+
+
